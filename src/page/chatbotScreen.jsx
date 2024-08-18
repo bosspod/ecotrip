@@ -4,6 +4,7 @@ import { UserOutlined, SendOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useLocation } from 'react-router-dom';
 import '../index.css'; // Ensure to have your CSS for styling
 import Navigator from '../components/Navgator';
+import OpenAI from "openai";
 
 const { Header, Content, Footer } = Layout;
 
@@ -31,19 +32,39 @@ const ChatbotScreen = () => {
     setMessages((prevMessages) => [...prevMessages, { text: messageText, sender: 'You' }]);
     setLoading(true);
 
-    const systemMessage = `You are an eco-sustainable travel advisor specializing in Thailand. Your role is to provide recommendations for eco-friendly travel destinations and activities to users who ask. Before giving any recommendations, you should ask about their travel preferences, such as the type of places they like or specific activities they are interested in. You should also inquire whether they prefer a peaceful or adventurous trip. Respond in the same language that the user uses to ask their questions, and maintain a friendly, conversational tone to make users feel comfortable and welcome.\n\nThis is the message from the customer that wants you to answer:\n\n${messageText}`;
+    const systemMessage = `You are an eco-sustainable travel advisor specializing in South Korea. Your role is to provide recommendations for eco-friendly travel destinations and activities to users who ask. Before giving any recommendations, you should ask about their travel preferences, such as the type of places they like or specific activities they are interested in. You should also inquire whether they prefer a peaceful or adventurous trip. Respond in the same language that the user uses to ask their questions, and maintain a friendly, conversational tone to make users feel comfortable and welcome.\n\nThis is the message from the customer that wants you to answer:\n\n${messageText}`;
+    
+    const apiKey = 'up_KDl3plarxz0L8PWnZmkQtZ1UkSOjS';
+    const openai = new OpenAI({
+      apiKey: apiKey,
+      baseURL: 'https://api.upstage.ai/v1/solar',
+      dangerouslyAllowBrowser: true
+    });
 
     try {
-      const response = await fetch('https://server.podsawee.com/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ prompt: systemMessage })
-      });
 
-      const data = await response.json();
-      const botMessage = data.message;
+      const response = await (async () => {
+        let result = ''; // Initialize result variable
+      
+        const chatCompletion = await openai.chat.completions.create({
+          model: 'solar-1-mini-chat',
+          messages: [
+            {
+              role: 'user',
+              content: systemMessage
+            }
+          ],
+          stream: true
+        });
+      
+        for await (const chunk of chatCompletion) {
+          result += chunk.choices[0]?.delta?.content || ''; // Append content to result
+        }
+      
+        return result; // Return the complete result
+      })();
+
+      const botMessage = response;
 
       setMessages((prevMessages) => [
         ...prevMessages,
