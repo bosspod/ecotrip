@@ -80,7 +80,7 @@ function Navigator() {
             <hr style={{border:"0.5px solid lightgray"}}></hr>
             <div style={{ fontWeight: "400" , marginTop: '40px', textAlign: 'center'}}>
             <p style={{marginBottom: '30px'}}>Developed by</p>
-            <Link to="https://podsawee.com">Podsawee W.</Link> & <Link to="#">Patcharapol R.</Link>
+            <Link to="https://podsawee.com">Podsawee W.</Link> & <Link to="#">Nattgarni A.</Link>
             </div>
             <div style={{ fontWeight: "400" , marginTop: '40px', textAlign: 'center', marginBottom: '40px'}}>
             <p style={{marginBottom: '30px'}}>UX&UI Design by</p>

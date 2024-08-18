@@ -9,7 +9,7 @@ import greenMarkerIcon from '../assets/green.svg';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 export default function MapView({ onMarkerClick }) {
-  const bangkokCenter = [13.7563, 100.5018]; // Bangkok center coordinates
+  const jejuCenter = [33.45, 126.56];
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
@@ -33,8 +33,8 @@ export default function MapView({ onMarkerClick }) {
 
   return (
     <MapContainer 
-      center={bangkokCenter} 
-      zoom={12} 
+      center={jejuCenter} 
+      zoom={9} 
       style={{ height: '100%', width: '100%' }} 
       zoomControl={false} // Disable zoom control
     >

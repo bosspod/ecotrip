@@ -39,19 +39,19 @@ const certificateData = [
 const recommendHotelData = [
   {
     title: "Green-Oasis-Resort",
-    description: "Eco-Friendly | Thailand",
+    description: "Jeju Island, South Korea",
     review: "4.5 (2k review)",
     imageUrl: "/assets/img/hotel/2/hotel.jpg",
   },
   {
     title: "Super-Premier-Hotel",
-    description: "Eco-Friendly | Thailand",
+    description: "Jeju Island, South Korea",
     review: "4.8 (3k review)",
     imageUrl: "/assets/img/hotel/1/hotel.jpg",
   },
   {
     title: "Eco-Skyline-Hotel",
-    description: "Eco-Friendly | Thailand",
+    description: "Jeju Island, South Korea",
     review: "4.7 (1.5k review)",
     imageUrl: "/assets/img/hotel/3/hotel.jpg",
   },
