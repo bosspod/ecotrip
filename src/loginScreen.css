@@ -1,0 +1,59 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .title2 {
+    margin-bottom: 20px;
+  }
+
+  .arrow-back {
+    background-color: rgb(254, 79, 79);
+
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: -15px;
+    left: -15px;
+    cursor: pointer;
+  }
+  
+  .styled-or {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #666;
+}
+
+  .styled-or::before,
+  .styled-or::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #666;
+  }
+
+  .styled-or:not(:empty)::before {
+      margin-right: 0.25em;
+  }
+
+  .styled-or:not(:empty)::after {
+      margin-left: 0.25em;
+  }
+
+  .login-secure {
+    color: #666666;
+    font-size: 14px;
+  }
