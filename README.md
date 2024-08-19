@@ -9,9 +9,9 @@ Currently, two official plugins are available:
 
 
 
-#Installation
+# Installation
 
 1. Create a .env file in the root file
-2. write ```VITE_API_KEY=yourUpstageAPI```
+2. Write ```VITE_API_KEY=yourUpstageAPI```
 3. Run ```npm i```
 4. Run ```npm run dev```
