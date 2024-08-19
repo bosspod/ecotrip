@@ -4,6 +4,7 @@ import { UserOutlined, SendOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useLocation } from 'react-router-dom';
 import '../index.css'; // Ensure to have your CSS for styling
 import Navigator from '../components/Navgator';
+import OpenAI from 'openai';
 
 const { Header, Content, Footer } = Layout;
 
